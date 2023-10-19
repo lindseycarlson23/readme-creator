@@ -1,13 +1,10 @@
-// TODO: Include packages needed for this application
-// import file here = require('path to file');
-// import generateMarkdown from './generateMarkdown';
+
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./generateMarkdown')
 
 
-
-// TODO: Create an array of questions for user input
+ // An array of questions for user input
 const questions = [
     {
       type: 'input',
@@ -52,10 +49,8 @@ const questions = [
     },
 ];
 
-// TODO: Create a function to write README file
-// CALL IN THE FS SYSTEM
-// FS WILL CREATE THE FILE AND PLACE THE DATA INSIDE
-// CREATES THE DATA THAT NEEDS TO GO INSIDE BY IMPORTING THE GENERATE MARKDOWN FILE AND CALLING THE FUNCTIONS WITHIN
+// Function to write README file
+
 function writeToFile(fileName, data) {
   //import generatMarkdown and call functions
     generateMarkdown(data);
@@ -63,47 +58,19 @@ function writeToFile(fileName, data) {
   err ? console.log(err) : console.log('Successfully created ReadMe.md!')
   );
 
-
-
-
 }
-// TODO: Create a function to initialize app
-//THIS IS WHERE INQUIRER QUESTIONS GO
-//GRAN ANSWERS IN .THEN IN THE RESPONSE OBJECT
+// Function to initialize app
+
 function init() {
-  //Inquirer Prompt(insert questions here)
  
 inquirer
   .prompt(questions)
   .then((data) => {
   writeToFile('ReadMe.md', data);
-    
   })
 
-  
- // .then(response) => {
-    //writeToFile(README.md, response)
-  // }
 }
-// Function call to initialize app
+
 
 init();
 
-
-// User answers questions and we receive response object
-// write response object value to HTML file
-// writeToFile from fs
-    // Data?
-    // html file name
-    // string Datatype
-    // JSONstringify or backticks creates a string
-        //backticks = template literal from object
-        // `<h1>${response.name} </h1>`
-    // function toHTML(object) {
-        //return `<h1>${response.name} </h1>`
-    // };
-
-
-//she recommends that you write out HTML
-
-//use bootstrap to write skeleton file
